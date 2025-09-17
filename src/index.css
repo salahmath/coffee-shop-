@@ -69,38 +69,49 @@ body {
 }
 
 .hero-left p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   line-height: 1.7;
 }
 
+/* Bouton primary (remplace le bleu par défaut) */
 .hero-buttons .btn-primary {
-  background-color: #6f4e37;
-  border-color: #6f4e37;
+  background-color: #6f4e37 !important;
+  border-color: #6f4e37 !important;
+  color: white !important;
   padding: 12px 24px;
   border-radius: 50px;
   border: 2px solid transparent;
 }
 
-.hero-buttons .btn-primary:hover {
-  background-color: #3d2b1f;
-  border-color: #3d2b1f;
+.hero-buttons .btn-primary:hover,
+.hero-buttons .btn-primary:focus,
+.hero-buttons .btn-primary:active {
+  background-color: #3d2b1f !important;
+  border-color: #3d2b1f !important;
+  color: white !important;
   transform: translateY(-2px);
 }
 
+/* Bouton outline (version alternative) */
 .hero-buttons .btn-outline-primary {
-  color: #6f4e37;
-  border-color: #6f4e37;
+  background-color: transparent !important;
+  border-color: #6f4e37 !important;
+  color: #6f4e37 !important;
   padding: 12px 24px;
   border-radius: 50px;
   border: 2px solid #6f4e37;
 }
 
-.hero-buttons .btn-outline-primary:hover {
-  background-color: #6f4e37;
-  border-color: #6f4e37;
+.hero-buttons .btn-outline-primary:hover,
+.hero-buttons .btn-outline-primary:focus,
+.hero-buttons .btn-outline-primary:active {
+  background-color: #6f4e37 !important;
+  border-color: #6f4e37 !important;
+  color: white !important;
   transform: translateY(-2px);
 }
+
 
 .logo {
   color: var(--primary-color) !important;
@@ -481,4 +492,71 @@ swiper-wrapper {
   height: auto;      /* garde le ratio naturel */
   max-height: 150px; /* limite la hauteur si nécessaire */
   object-fit: contain; /* s'adapte sans couper */
+}
+@media (max-width: 1200px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 15px !important;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-size: 20px !important;
+  }
+}
+
+.home-section1 {
+  padding: 60px;
+}
+
+@media (max-width: 988px) {
+  .home-section1 {
+    padding: 3px;
+  }
+}
+
+menue {
+  background-color: rgba(245, 245, 220, 0.5) !important;
+  margin: 3px;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+@media (max-width: 988px) {
+ .menue {
+    margin: 3px !important;
+    padding: 3px !important;
+  }
+  .navbar-padding{
+    
+    margin: 3px !important;
+  }
+  .contact{
+    
+
+    margin: 3px !important;
+    padding: 3px !important;  }
+    .travaill{
+      margin: 3px !important;
+      padding: 3px !important;
+    }
+}
+
+.contact .bg-light{
+  background: rgba(255, 255, 255, 0.5) !important; /* noir transparent (40%) */
+  backdrop-filter: blur(10px) !important;    /* flou derrière */
+  box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 10px !important;
+
+  -webkit-backdrop-filter: blur(5px) !important; /* support Safari */}
+.card{
+  background: rgba(255, 255, 255, 0.5) !important; /* noir transparent (40%) */
+
+}
+.card-text{
+  color: var(--text-color) !important;
+}
+
+.card-title{
+  color: var(--primary-color) !important;
 }

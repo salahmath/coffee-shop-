@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.10.57",
     "bootstrap": "^5.3.8",
     "lottie-react": "^2.4.1",
+    "mdb-react-ui-kit": "^9.0.0",
     "react": "^19.1.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",

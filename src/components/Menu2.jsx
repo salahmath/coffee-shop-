@@ -5,6 +5,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { FaBars } from "react-icons/fa";
+import Lottie from "lottie-react";
+import loadingAnimation from "../../public/Coffee.json"; 
 
 // Traductions pour le menu
 const menuTranslations = {
@@ -453,6 +456,10 @@ const MenuPage = ({ language = "fr" }) => {
   const t = menuTranslations[language];
   const menuData = getMenuData(language);
 
+  const [loading, setLoading] = React.useState(true);
+  const [loading3, setLoading3] = React.useState(true);
+  const [loading0, setLoading0] = React.useState(true);
+
   useEffect(() => {
     const handleNavClick = (e) => {
       if (
@@ -508,8 +515,9 @@ const MenuPage = ({ language = "fr" }) => {
 >
         <Container>
           <Navbar.Brand href="#">{t.menuTitle}</Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse>
+          <Navbar.Toggle aria-controls="basic-navbar-nav">
+  <FaBars style={{ color: '#fff', fontSize: '1.5rem' }} />
+</Navbar.Toggle>          <Navbar.Collapse>
             <Nav className="mx-auto">
               <Nav.Link href="#boissons-chaudes">{t.hotDrinks}</Nav.Link>
               <Nav.Link href="#boissons-fraiches">{t.coldDrinks}</Nav.Link>
@@ -546,9 +554,23 @@ const MenuPage = ({ language = "fr" }) => {
               {menuData.hotDrinks.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div className="menu-item card h-100 border-0 shadow-sm">
+                  {loading0 && (
+          <div className="loader" style={{ 
+            position: "absolute", 
+            top: 0, left: 0, right: 0, bottom: 0, 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            background: "#fff"
+          }}>
+            <Lottie animationData={loadingAnimation} loop={true} style={{ width: 180, height: 180 }} />
+          </div>
+        )}
                     <img
                       src={item.image}
                       alt={item.name}
+                      onError={() => setLoading0(true)} // quand l'image finit de charger
+                      onLoad={() => setLoading0(false)} // quand l'image finit de charger
                       className="item-image card-img-top"
                     />
                     <div className="card-body d-flex flex-column">
@@ -558,7 +580,7 @@ const MenuPage = ({ language = "fr" }) => {
                           {item.price}
                         </span>
                       </div>
-                      <p className="card-text text-secondary mt-auto">
+                      <p className="card-text  mt-auto">
                         {item.description}
                       </p>
                     </div>
@@ -597,9 +619,23 @@ const MenuPage = ({ language = "fr" }) => {
               {menuData.coldDrinks.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div className="menu-item card h-100 border-0 shadow-sm">
+                  {loading && (
+          <div className="loader" style={{ 
+            position: "absolute", 
+            top: 0, left: 0, right: 0, bottom: 0, 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            background: "#fff"
+          }}>
+            <Lottie animationData={loadingAnimation} loop={true} style={{ width: 180, height: 180 }} />
+          </div>
+        )}
                     <img
                       src={item.image}
                       alt={item.name}
+                      onLoad={() => setLoading(false)} // quand l'image finit de charger
+                      onError={() => setLoading(true)} // quand l'image finit de charger
                       className="item-image card-img-top"
                     />
                     <div className="card-body d-flex flex-column">
@@ -609,7 +645,7 @@ const MenuPage = ({ language = "fr" }) => {
                           {item.price}
                         </span>
                       </div>
-                      <p className="card-text text-secondary mt-auto">
+                      <p className="card-text  mt-auto">
                         {item.description}
                       </p>
                     </div>
@@ -648,9 +684,23 @@ const MenuPage = ({ language = "fr" }) => {
               {menuData.pastries.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div className="menu-item card h-100 border-0 shadow-sm">
+                  {loading3 && (
+          <div className="loader" style={{ 
+            position: "absolute", 
+            top: 0, left: 0, right: 0, bottom: 0, 
+            display: "flex", 
+            justifyContent: "center", 
+            alignItems: "center", 
+            background: "#fff"
+          }}>
+            <Lottie animationData={loadingAnimation} loop={true} style={{ width: 180, height: 180 }} />
+          </div>
+        )}
                     <img
                       src={item.image}
                       alt={item.name}
+                      onError={() => setLoading3(true)} // quand l'image finit de charger
+                      onLoad={() => setLoading3(false)} // quand l'image finit de charger
                       className="item-image card-img-top"
                     />
                     <div className="card-body d-flex flex-column">
@@ -660,7 +710,7 @@ const MenuPage = ({ language = "fr" }) => {
                           {item.price}
                         </span>
                       </div>
-                      <p className="card-text text-secondary mt-auto">
+                      <p className="card-text  mt-auto">
                         {item.description}
                       </p>
                     </div>

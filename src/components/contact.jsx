@@ -115,7 +115,7 @@ const Contact = ({ language = 'fr' }) => {
           className="mb-5"
           style={{
             fontFamily: "'Great Vibes', cursive",
-            fontSize: 'clamp(2rem, 5vw, 5rem)', 
+            fontSize: 'clamp(2rem, 1vw, 1rem)',
             color: '#704214',
             textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
           }}

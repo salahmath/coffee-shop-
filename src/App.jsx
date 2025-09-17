@@ -50,7 +50,7 @@ function App() {
               width: "100%",
             }}
           >
-            <div id="home" style={{ padding: "60px" }}>
+            <div id="home"  className="home-section1">
               <Hero language={language} />
             </div>
 
