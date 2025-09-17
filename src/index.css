@@ -1,0 +1,484 @@
+.nav-link {
+  cursor: pointer;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+/* App.css */
+:root {
+  --primary-color: #6f4e37;
+  --secondary-color: #f5f5dc;
+  --text-color: #3d2b1f;
+  --accent-color: #d2b48c;
+  --white-color: #ffffff;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+/* components/Hero/Hero.css */
+.hero-section {
+  background-color: rgba(245, 245, 220, 0.5); /* 70% opaque */
+  padding: 6rem 0;
+  color: #3d2b1f;
+  margin-top: 20px;
+}
+
+.hero-left {
+  animation: slideInFromLeft 1s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-right {
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-right img {
+  border-radius: 10px;
+}
+
+.hero-left h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  color: #6f4e37;
+  line-height: 1.2;
+  font-family: "Playfair Display", serif;
+}
+
+.hero-left p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.hero-buttons .btn-primary {
+  background-color: #6f4e37;
+  border-color: #6f4e37;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+}
+
+.hero-buttons .btn-primary:hover {
+  background-color: #3d2b1f;
+  border-color: #3d2b1f;
+  transform: translateY(-2px);
+}
+
+.hero-buttons .btn-outline-primary {
+  color: #6f4e37;
+  border-color: #6f4e37;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid #6f4e37;
+}
+
+.hero-buttons .btn-outline-primary:hover {
+  background-color: #6f4e37;
+  border-color: #6f4e37;
+  transform: translateY(-2px);
+}
+
+.logo {
+  color: var(--primary-color) !important;
+  cursor: pointer !important;
+  display: inline-block; /* nécessaire pour transform */
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+.nav-link {
+  color: var(--accent-color) !important;
+  display: inline-block; /* nécessaire pour transform */
+  font-size: 20px !important;
+  text-transform: uppercase;
+  transition: transform 0.2s, color 0.3s, border-bottom 0.3s; /* transitions */
+}
+
+.nav-link:hover {
+  color: rgb(0, 0, 0) !important;
+  transform: scale(1.01);
+  rotate: 1deg; /* agrandir un peu */
+}
+.cartes {
+  transition: 0.6s !important; /* transitions */
+  cursor: pointer;
+}
+.cartes:hover {
+  rotate: -20deg;
+  scale: 1.02;
+}
+
+.menu-section {
+  margin: 60px;
+  border-radius: 20px;
+  background-color: rgba(245, 245, 220, 0.5);
+  height: 70vh;
+}
+
+.contact {
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+  margin: 70px;
+  border-radius: 20px;
+}
+
+/* Team Section Styling */
+.team-section {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  color: #6a4f41;
+  margin-bottom: 20px;
+}
+
+.team-section .section-description {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  color: #555;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #d2b48c; /* Coffee cream color */
+}
+
+.team-member h3 {
+  font-size: 1.8rem;
+  color: #6a4f41;
+  margin-bottom: 5px;
+}
+
+.team-member .role {
+  font-style: italic;
+  color: #a0522d; /* Sienna color */
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.team-member .description {
+  font-size: 0.95rem;
+  color: #666;
+
+  line-height: 1.7;
+}
+/* Footer Styling */
+.cafe-footer {
+  background-color: #6a4f41;
+  color: #fff;
+  padding: 40px 0 20px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section h3 {
+  color: #ffd700;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.footer-section h4 {
+  color: #d2b48c;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+.travaill {
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+  margin: 70px;
+  border-radius: 20px;
+}
+.tra {
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+  margin: 70px;
+  border-radius: 20px;
+}
+:root {
+  --primary-font: "Montserrat", sans-serif;
+  --heading-font: "Playfair Display", serif;
+  --background-color: #fdf6ee;
+  --text-color: #4a2c2a;
+  --primary-color: #8b4513;
+  --accent-color: #d27d2d;
+  --card-bg-color: #ffffff;
+}
+.hero-buttons .btn-outline-primary:active {
+  background-color: var(--white-color) !important;
+  color: var(--primary-color) !important;
+}
+.hero-buttons .btn-primary:active {
+  background-color: var(--white-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.text-brown {
+  color: var(--primary-color) !important;
+}
+
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.border-accent {
+  border-color: var(--accent-color) !important;
+}
+
+.z-3 {
+  z-index: 1030;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.menu-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.item-image {
+  height: 200px;
+  object-fit: cover;
+}
+
+.section-intro {
+  max-width: 700px;
+  font-size: 1.1rem;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .section-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .position-relative.px-5 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.social-icons a {
+  transition: transform 0.3s ease;
+}
+
+.social-icons a.instagram {
+  color: #E1306C; /* couleur Instagram */
+}
+
+.social-icons a.facebook {
+  color: #1877F2; /* couleur Facebook */
+}
+
+.social-icons a.tiktok {
+  color: #000000; /* couleur TikTok */
+}
+
+/* Hover: agrandir un peu */
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons{
+  padding: 0;
+  margin: 0;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 200px;
+  flex-direction: row;
+}
+.menue{
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+  margin: 70px;
+  border-radius: 20px;
+  padding: 20px;
+
+}
+.social-icons a {
+  font-size: 22px !important; 
+  margin: 0 10px !important;
+  transition: transform 0.3s ease !important;
+  color: #444 !important; /* couleur par défaut */
+}
+
+.social-icons a:hover {
+  transform: scale(1.2) !important;
+}
+
+/* couleurs spécifiques */
+.social-icons a:nth-child(1) { color: #1877f2 !important; } /* Facebook */
+.social-icons a:nth-child(2) { color: #e1306c !important; } /* Instagram */
+.social-icons a:nth-child(3) { color: #000000 !important; } /* Twitter */
+section#equipe.bg-light {
+  background-color: rgba(245, 245, 220, 0.5) !important; /* 70% opaque */
+}
+section#stats.bg-light {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* 70% opaque */
+}
+
+
+
+
+swiper-wrapper {
+  box-sizing: content-box;
+  justify-content: flex-start;
+}
+
+.social-icons1 a {
+  font-size: 22px !important; 
+  margin: 0 10px !important;
+  transition: transform 0.3s ease !important;
+  color: #444 !important; /* couleur par défaut */
+}
+
+.social-icons1 a:hover {
+  transform: scale(1.2) !important;
+}
+
+/* couleurs spécifiques */
+.social-icons1 a:nth-child(1) { color: #1877f2 !important; } /* Facebook */
+.social-icons1 a:nth-child(2) { color: #e1306c !important; } /* Instagram */
+.social-icons1 a:nth-child(3) { color: #1da1f2 !important; } /* Twitter */
+.social-icons1 a:nth-child(4) { color: #0a66c2 !important; } /* LinkedIn */
+.social-icons1 a:nth-child(5) { color: #ff0000 !important; } /* YouTube */
+.navbar-padding {
+  margin: 0 70px  !important; /* padding sur tous les côtés */
+  border-radius: 20px;
+}
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.2); /* noir transparent (40%) */
+  backdrop-filter: blur(10px);    /* flou derrière */
+  -webkit-backdrop-filter: blur(5px); /* support Safari */
+                  /* espace intérieur */
+}
+.item-image {
+  width: 100%;       /* prend toute la largeur du parent */
+  height: auto;      /* garde le ratio naturel */
+  max-height: 150px; /* limite la hauteur si nécessaire */
+  object-fit: contain; /* s'adapte sans couper */
+}
