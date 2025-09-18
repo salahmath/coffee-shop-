@@ -540,6 +540,40 @@ swiper-wrapper {
     font-size: 15px !important;
   }
 }
+@media (max-width: 280px) {
+  .emails {
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+}
+
+
+
+@media (max-width: 280px) {
+  .stats-section .container .row {
+    flex-direction: column !important; /* une seule colonne */
+    align-items: center !important;    /* centrer les items */
+    max-width: 100% !important;        /* s’adapte à l’écran */
+  }
+
+  .stats-section .stat-label {
+    max-width: 100%;              /* limite à 70% de la largeur */
+    overflow: hidden;            /* coupe le reste */
+    text-overflow: ellipsis;     /* ajoute "..." */
+  }
+}
+
+
+@media (max-width: 270px) {
+  .contactnous {
+    font-size: 1.2rem;   /* taille réduite de la police */
+    line-height: 1.4;    /* lisibilité */
+    word-break: break-word; /* éviter le débordement */
+  }
+}
 
 @media (max-width: 991px) {
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -555,6 +589,15 @@ swiper-wrapper {
   .home-section1 {
     padding: 3px;
   }
+  .contact-page{
+    padding: 3px;
+margin: 3px;
+  }
+}
+.contact-page{
+  background: rgba(255, 255, 255, 0.2); /* noir transparent (40%) */
+  backdrop-filter: blur(10px); /* flou derrière */
+  -webkit-backdrop-filter: blur(5px); /* support Safari */
 }
 
 menue {

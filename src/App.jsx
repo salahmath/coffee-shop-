@@ -88,7 +88,7 @@ function App() {
         </div>
       </AnimatedSection>
 
-      <div className="py-5">
+      <div >
         <Footer language={language} />
       </div>
     </>

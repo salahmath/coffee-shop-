@@ -14,7 +14,7 @@ const Contact = ({ language = 'fr' }) => {
   // Traductions
   const contactTranslations = {
     fr: {
-      title: "Contactez-nous",
+      title: "Contactez nous",
       subtitle: "Une question, une suggestion ou juste envie de nous dire bonjour ?",
       phone: "Téléphone",
       address: "Adresse",
@@ -99,7 +99,7 @@ const Contact = ({ language = 'fr' }) => {
           <div className="col-12 col-lg-10 col-xl-9">
             <div className="contact-container bg-white rounded-4 shadow-sm p-3 p-md-4 p-lg-5">
               <header className="text-center mb-4 mb-md-5">
-                <h1 className="fw-bold text-brown mb-2">
+                <h1 className="fw-bold text-brown mb-2 contactnous">
                   {contactItems.title}
                 </h1>
                 <p className="text-secondary mb-0 fs-5">
@@ -140,7 +140,7 @@ const Contact = ({ language = 'fr' }) => {
                       <strong className="d-block">{contactItems.email}</strong>
                       <a 
                         href="mailto:contact@cafemoderne.com" 
-                        className="text-muted text-decoration-none"
+                        className="text-muted text-decoration-none emails"
                       >
                         {contactItems.emailAddress}
                       </a>
@@ -268,7 +268,6 @@ const Contact = ({ language = 'fr' }) => {
         
         .contact-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, #f5f5f5 0%, #e6d2c3 100%);
           padding: 1rem;
           font-family: ${isRTL ? "'Cairo', sans-serif" : "'Poppins', sans-serif"};
         }

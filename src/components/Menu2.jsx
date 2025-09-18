@@ -58,7 +58,7 @@ const getMenuData = (language) => {
       {
         id: 1,
         name: t.hotDrinks1.name,
-        price: "2.50€",
+        price: "2.50DT",
         description: t.hotDrinks1.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-coffee.png",
@@ -66,7 +66,7 @@ const getMenuData = (language) => {
       {
         id: 2,
         name: t.hotDrinks2.name,
-        price: "3.00€",
+        price: "3.00DT",
         description: t.hotDrinks2.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-americano.png",
@@ -74,7 +74,7 @@ const getMenuData = (language) => {
       {
         id: 3,
         name: t.hotDrinks3.name,
-        price: "3.60€",
+        price: "3.60DT",
         description: t.hotDrinks3.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-latte.png",
@@ -82,7 +82,7 @@ const getMenuData = (language) => {
       {
         id: 4,
         name: t.hotDrinks4.name,
-        price: "4.50€",
+        price: "4.50DT",
         description: t.hotDrinks4.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-signature-latte.png",
@@ -90,7 +90,7 @@ const getMenuData = (language) => {
       {
         id: 5,
         name: t.hotDrinks5.name,
-        price: "3.80€",
+        price: "3.80DT",
         description: t.hotDrinks5.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-macchiato.png",
@@ -98,7 +98,7 @@ const getMenuData = (language) => {
       {
         id: 6,
         name: t.hotDrinks6.name,
-        price: "3.70€",
+        price: "3.70DT",
         description: t.hotDrinks6.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-cappuccino.png",
@@ -106,7 +106,7 @@ const getMenuData = (language) => {
       {
         id: 7,
         name: t.hotDrinks7.name,
-        price: "2.20€",
+        price: "2.20DT",
         description: t.hotDrinks7.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/espresso.png",
@@ -114,7 +114,7 @@ const getMenuData = (language) => {
       {
         id: 8,
         name: t.hotDrinks8.name,
-        price: "2.80€",
+        price: "2.80DT",
         description: t.hotDrinks8.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-tea.png",
@@ -122,7 +122,7 @@ const getMenuData = (language) => {
       {
         id: 9,
         name: t.hotDrinks9.name,
-        price: "3.40€",
+        price: "3.40DT",
         description: t.hotDrinks9.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-chocolate.png",
@@ -130,7 +130,7 @@ const getMenuData = (language) => {
       {
         id: 10,
         name: t.hotDrinks10.name,
-        price: "4.20€",
+        price: "4.20DT",
         description: t.hotDrinks10.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-matcha-latte.png",
@@ -138,7 +138,7 @@ const getMenuData = (language) => {
       {
         id: 11,
         name: t.hotDrinks11.name,
-        price: "4.00€",
+        price: "4.00DT",
         description: t.hotDrinks11.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/hot-chai-latte.png",
@@ -148,7 +148,7 @@ const getMenuData = (language) => {
       {
         id: 1,
         name: t.coldDrinks1.name,
-        price: "3.20€",
+        price: "3.20DT",
         description: t.coldDrinks1.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/iced_coffee.png",
@@ -156,7 +156,7 @@ const getMenuData = (language) => {
       {
         id: 2,
         name: t.coldDrinks2.name,
-        price: "3.80€",
+        price: "3.80DT",
         description: t.coldDrinks2.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/cold_brew.png",
@@ -164,7 +164,7 @@ const getMenuData = (language) => {
       {
         id: 3,
         name: t.coldDrinks3.name,
-        price: "3.50€",
+        price: "3.50DT",
         description: t.coldDrinks3.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/iced_americano.png",
@@ -172,7 +172,7 @@ const getMenuData = (language) => {
       {
         id: 4,
         name: t.coldDrinks4.name,
-        price: "4.20€",
+        price: "4.20DT",
         description: t.coldDrinks4.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/espresso-coffee/DNK00724_IcedLatte_200px@2x.png",
@@ -180,7 +180,7 @@ const getMenuData = (language) => {
       {
         id: 5,
         name: t.coldDrinks5.name,
-        price: "4.90€",
+        price: "4.90DT",
         description: t.coldDrinks5.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/espresso-coffee/Iced%20Signature%20Latte@2x.png",
@@ -188,7 +188,7 @@ const getMenuData = (language) => {
       {
         id: 6,
         name: t.coldDrinks6.name,
-        price: "4.40€",
+        price: "4.40DT",
         description: t.coldDrinks6.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/espresso-coffee/DNK00542_IcedCaramelMacchiatto_200px@2x.png",
@@ -196,7 +196,7 @@ const getMenuData = (language) => {
       {
         id: 7,
         name: t.coldDrinks7.name,
-        price: "4.30€",
+        price: "4.30DT",
         description: t.coldDrinks7.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/espresso-coffee/DNK00557_IcedFrenchVanillaCap_200px@2x.png",
@@ -204,7 +204,7 @@ const getMenuData = (language) => {
       {
         id: 8,
         name: t.coldDrinks8.name,
-        price: "3.20€",
+        price: "3.20DT",
         description: t.coldDrinks8.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/iced-tea.png",
@@ -212,7 +212,7 @@ const getMenuData = (language) => {
       {
         id: 9,
         name: t.coldDrinks9.name,
-        price: "4.10€",
+        price: "4.10DT",
         description: t.coldDrinks9.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/dunkin-refresher.png",
@@ -220,7 +220,7 @@ const getMenuData = (language) => {
       {
         id: 10,
         name: t.coldDrinks10.name,
-        price: "4.50€",
+        price: "4.50DT",
         description: t.coldDrinks10.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/SPARKD_Rectangle.png",
@@ -228,7 +228,7 @@ const getMenuData = (language) => {
       {
         id: 11,
         name: t.coldDrinks11.name,
-        price: "4.60€",
+        price: "4.60DT",
         description: t.coldDrinks11.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/iced-matcha-latte.png",
@@ -236,7 +236,7 @@ const getMenuData = (language) => {
       {
         id: 12,
         name: t.coldDrinks12.name,
-        price: "4.40€",
+        price: "4.40DT",
         description: t.coldDrinks12.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign-v2/302x570/iced-chai-latte.png",
@@ -246,7 +246,7 @@ const getMenuData = (language) => {
       {
         id: 1,
         name: t.pastries1.name,
-        price: "4.90€",
+        price: "4.90DT",
         description: t.pastries1.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/DNK00673_CroissantSausageEggCheese_lib_RGB@2x.png",
@@ -254,7 +254,7 @@ const getMenuData = (language) => {
       {
         id: 2,
         name: t.pastries2.name,
-        price: "5.20€",
+        price: "5.20DT",
         description: t.pastries2.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/DNK00686_BaconEggCheeseBagel_200px@2x.png",
@@ -262,7 +262,7 @@ const getMenuData = (language) => {
       {
         id: 3,
         name: t.pastries3.name,
-        price: "5.10€",
+        price: "5.10DT",
         description: t.pastries3.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/DNK00671_EngMuffinTurkeySausageEggCheese_lib_RGB%20copy@2x.png",
@@ -270,7 +270,7 @@ const getMenuData = (language) => {
       {
         id: 4,
         name: t.pastries4.name,
-        price: "4.50€",
+        price: "4.50DT",
         description: t.pastries4.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/DNK00672_EngMuffinEggCheese_lib_RGB%20copy@2x.png",
@@ -278,7 +278,7 @@ const getMenuData = (language) => {
       {
         id: 5,
         name: t.pastries5.name,
-        price: "5.50€",
+        price: "5.50DT",
         description: t.pastries5.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/SourdoughBNT.png",
@@ -286,7 +286,7 @@ const getMenuData = (language) => {
       {
         id: 6,
         name: t.pastries6.name,
-        price: "3.80€",
+        price: "3.80DT",
         description: t.pastries6.description,
         image:
           "https://www.dunkindonuts.com/content/dam/dd/img/menu-redesign/sandwiches-and-more/DNK00688_BaconEggCheeseWakeUpWrap_500px%20copy@2x.png",
