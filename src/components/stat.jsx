@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// Traductions
-import {statsTranslations} from "./data/tran" 
+import { statsTranslations } from "./data/tran";
 
 const StatisticsSection = ({ language = "fr" }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,16 +16,16 @@ const StatisticsSection = ({ language = "fr" }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
+        setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
     if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
+
+    return () => {
+      if (statsRef.current) observer.unobserve(statsRef.current);
+    };
   }, []);
 
   return (
@@ -40,7 +38,7 @@ const StatisticsSection = ({ language = "fr" }) => {
                 number={stat.number}
                 label={statsTranslations[language][index].label}
                 isVisible={isVisible}
-                delay={index * 100}
+                delay={index * 150}
               />
             </div>
           ))}
@@ -52,30 +50,29 @@ const StatisticsSection = ({ language = "fr" }) => {
 
 const StatItem = ({ number, label, isVisible, delay }) => {
   const [count, setCount] = useState(0);
-  const hasAnimated = useRef(false);
+  const animationRef = useRef(null);
 
   useEffect(() => {
-    if (isVisible && !hasAnimated.current) {
-      hasAnimated.current = true;
-
+    const animate = () => {
       const duration = 2000;
-      const increment = number / (duration / 16);
-      let current = 0;
+      const start = performance.now();
 
-      const timer = setTimeout(() => {
-        const updateCounter = () => {
-          current += increment;
-          if (current < number) {
-            setCount(Math.ceil(current));
-            requestAnimationFrame(updateCounter);
-          } else {
-            setCount(number);
-          }
-        };
-        updateCounter();
-      }, delay);
+      const step = (time) => {
+        const progress = Math.min((time - start) / duration, 1);
+        setCount(Math.ceil(progress * number));
+        if (progress < 1) animationRef.current = requestAnimationFrame(step);
+      };
 
-      return () => clearTimeout(timer);
+      animationRef.current = requestAnimationFrame(step);
+    };
+
+    if (isVisible) {
+      setCount(0); // reset
+      const timeout = setTimeout(animate, delay);
+      return () => clearTimeout(timeout);
+    } else {
+      setCount(0); // reset quand invisible
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     }
   }, [isVisible, number, delay]);
 

@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { Container, Row, Col, Button } from "react-bootstrap";
-import i from "../assets/1.png";
+import i from "../assets/coff.png";
 import StatisticsSection from "./stat";
 import { heroTranslations } from "./data/tran";
-import loadingAnimation from "../../public/Coffee (1).json";
-import Lottie from "lottie-react";
-import { FaBars } from "react-icons/fa";
 
 const Hero = ({ language }) => {
   const t = heroTranslations[language];
@@ -44,7 +41,10 @@ const Hero = ({ language }) => {
           {/* Texte */}{" "}
           <Col lg={6} md={10} className="hero-left mb-4 mb-lg-0">
             {" "}
-            <h2 className="hero-title fs-1 fs-md-2 fs-lg-1 fw-bold mb-3 text-brown">
+            <h2
+              className="hero-title fs-1 fs-md-2 fs-lg-1 fw-bold mb-3 "
+              style={{ color: "a0522d" }}
+            >
               {t.title}
             </h2>{" "}
             <p className="hero-text">{t.text}</p>{" "}
@@ -64,22 +64,24 @@ const Hero = ({ language }) => {
               </Button>{" "}
             </div>{" "}
           </Col>{" "}
-          {/* Image */}{" "}
-          <Col lg={6} md={10} className="hero-right text-center">
-            <Lottie
-              animationData={loadingAnimation}
-              loop={true}
-              className="hero-img"
+          {/* Image */}
+          <Col
+            xs={12}
+            md={6}
+            className="hero-right d-flex justify-content-center align-items-center"
+          >
+            <img
+              className="img-fluid rounded shadow-sm"
+              src={i}
+              alt="bgg"
               style={{
-                width: getLottieSize(windowWidth),
-                height: getLottieSize(windowWidth),
-                margin: "0 auto",
-                transition: "all 0.3s ease",
+                maxWidth: "80%",
+                height: "auto",
               }}
             />
           </Col>
         </Row>{" "}
-        {/* Statistiques */} <StatisticsSection language={language} />{" "}
+        <StatisticsSection language={language} />{" "}
       </Container>{" "}
     </section>
   );

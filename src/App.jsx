@@ -1,77 +1,96 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Lottie from "lottie-react";
+
+// Composants
 import Navbars from "./components/nav";
 import Hero from "./components/hero";
 import Menues from "./components/Menu2";
-import Contact from "./components/contact";
-import TeamSection from "./components/travailleur";
+import ContactPage2 from "./components/contacts";
+import Team1 from "./components/team";
 import Footer from "./components/footer";
-import bgImage from "./assets/ft.jpg";
-import Lottie from "lottie-react";
 
-import loadingAnimation from "../public/Coffee.json"; 
+// Assets
+import loadingAnimation from "../public/Coffee.json";
+
+// Wrapper pour déclencher l'animation à chaque intersection
+const AnimatedSection = ({ children }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    const el = document.getElementById(children.props.id || "section");
+    if (el) observer.observe(el);
+
+    return () => {
+      if (el) observer.unobserve(el);
+    };
+  }, [children.props.id]);
+
+  return React.cloneElement(children, { isVisible });
+};
 
 function App() {
-  const [language, setLanguage] = useState("fr"); // langue globale
+  const [language, setLanguage] = useState("fr");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false); // Fin du chargement après 2 secondes
-    }, 2000);
-
+    const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
+  if (isLoading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <Lottie animationData={loadingAnimation} loop={true} />
+      </div>
+    );
+  }
+
   return (
     <>
-      {isLoading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh",
-          }}
-        >
-          <Lottie animationData={loadingAnimation} loop={true} />
+      <Navbars language={language} onLanguageChange={setLanguage} />
+
+      <AnimatedSection>
+        <div id="home">
+          <Hero language={language} />
         </div>
-      ) : (
-        <>
-          <Navbars language={language} onLanguageChange={setLanguage} />
+      </AnimatedSection>
 
-          <div
-            style={{
-              backgroundImage: `url(${bgImage})`,
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed",
-              minHeight: "100vh",
-              width: "100%",
-            }}
-          >
-            <div id="home"  className="home-section1">
-              <Hero language={language} />
-            </div>
+      <AnimatedSection>
+        <div id="menu" className="py-5">
+          <Menues language={language} />
+        </div>
+      </AnimatedSection>
 
-            <div id="menu" style={{ paddingTop: "100px" }}>
-              <Menues language={language} />
-            </div>
+      <AnimatedSection>
+        <div id="contacts" className="py-5">
+          <ContactPage2 language={language} />
+        </div>
+      </AnimatedSection>
 
-            <div id="contacts" style={{ paddingTop: "10px" }}>
-              <Contact language={language} />
-            </div>
+      <AnimatedSection>
+        <div id="team" className="py-5">
+          <Team1 language={language} />
+        </div>
+      </AnimatedSection>
 
-            <div id="team" style={{ paddingTop: "10px" }}>
-              <TeamSection language={language} />
-            </div>
-
-            <div style={{ paddingTop: "70px" }}>
-              <Footer language={language} />
-            </div>
-          </div>
-        </>
-      )}
+      <div className="py-5">
+        <Footer language={language} />
+      </div>
     </>
   );
 }
