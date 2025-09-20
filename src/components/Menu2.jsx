@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { FaBars } from "react-icons/fa";
 import Lottie from "lottie-react";
-import loadingAnimation from "../../public/Coffee.json";
+import loadingAnimation from "../../public/src/Coffee.json";
 
 // Traductions pour le menu
 const menuTranslations = {
@@ -730,41 +730,7 @@ const MenuPage = ({ language = "fr" }) => {
   const [loading3, setLoading3] = React.useState(true);
   const [loading0, setLoading0] = React.useState(true);
 
-  useEffect(() => {
-    const handleNavClick = (e) => {
-      if (
-        e.target.tagName === "A" &&
-        e.target.getAttribute("href").startsWith("#")
-      ) {
-        e.preventDefault();
-        const targetId = e.target.getAttribute("href");
-        const targetSection = document.querySelector(targetId);
 
-        if (targetSection && navRef.current) {
-          const headerOffset = navRef.current.offsetHeight;
-          const elementPosition = targetSection.getBoundingClientRect().top;
-          const offsetPosition =
-            elementPosition + window.pageYOffset - headerOffset - 20;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
-        }
-      }
-    };
-
-    const navElement = navRef.current;
-    if (navElement) {
-      navElement.addEventListener("click", handleNavClick);
-    }
-
-    return () => {
-      if (navElement) {
-        navElement.removeEventListener("click", handleNavClick);
-      }
-    };
-  }, []);
 
   const commonSwiperOptions = {
     modules: [Navigation],

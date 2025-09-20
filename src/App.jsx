@@ -11,30 +11,9 @@ import Team1 from "./components/team";
 import Footer from "./components/footer";
 
 // Assets
-import loadingAnimation from "../public/Coffee.json";
-
-// Wrapper pour déclencher l'animation à chaque intersection
-const AnimatedSection = ({ children }) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
-
-    const el = document.getElementById(children.props.id || "section");
-    if (el) observer.observe(el);
-
-    return () => {
-      if (el) observer.unobserve(el);
-    };
-  }, [children.props.id]);
-
-  return React.cloneElement(children, { isVisible });
-};
+import loadingAnimation from "../public/src/Coffee.json";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   const [language, setLanguage] = useState("fr");
@@ -45,6 +24,17 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // 👉 Initialisation AOS ici
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      once: true,
+      offset: 100,
+      easing: "ease-in-out"
+    });
+  }, []);
+  
+
   if (isLoading) {
     return (
       <div
@@ -53,6 +43,7 @@ function App() {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
+          backgroundColor:"white"
         }}
       >
         <Lottie animationData={loadingAnimation} loop={true} />
@@ -64,31 +55,23 @@ function App() {
     <>
       <Navbars language={language} onLanguageChange={setLanguage} />
 
-      <AnimatedSection>
-        <div id="home">
-          <Hero language={language} />
-        </div>
-      </AnimatedSection>
+      <div id="home">
+        <Hero language={language} />
+      </div>
 
-      <AnimatedSection>
-        <div id="menu" className="py-5">
-          <Menues language={language} />
-        </div>
-      </AnimatedSection>
+      <div id="menu" className="py-5" data-aos="fade-up">
+        <Menues language={language} />
+      </div>
 
-      <AnimatedSection>
-        <div id="contacts" className="py-5">
-          <ContactPage2 language={language} />
-        </div>
-      </AnimatedSection>
+      <div id="contacts" className="py-5" data-aos="fade-up">
+        <ContactPage2 language={language} />
+      </div>
 
-      <AnimatedSection>
-        <div id="team" className="py-5">
-          <Team1 language={language} />
-        </div>
-      </AnimatedSection>
+      <div id="team" className="py-5" data-aos="fade-right">
+        <Team1 language={language} />
+      </div>
 
-      <div >
+      <div>
         <Footer language={language} />
       </div>
     </>
